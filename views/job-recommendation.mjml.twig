@@ -1,0 +1,105 @@
+<mjml lang="de">
+  
+  <!-- HEAD -->
+  <mj-head>
+    <mj-style>
+      .link { color: #0088cc; text-decoration: none }
+      .link:hover { text-decoration: underline !important }
+      .company-logo { max-width: 80% }
+      .box-shadow { box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1); -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1); }
+    </mj-style>
+    
+    <mj-attributes>
+      <mj-class name="background" background-color="#004099" /> 
+      <mj-class name="gradient" background-color="linear-gradient(135deg, #0088CC 0%, #004099 100%)" />
+      <mj-class name="h2" color="#393941" padding-bottom="16px" font-size="18px" font-weight="700" line-height="19.5px" />
+      <mj-class name="text--tiny"  align="center" font-size="12px" color="#5F6062" />
+      
+      <mj-all padding="0" font-family="'Helvetica Neue', Arial, sans-serif" />
+    </mj-attributes>
+  </mj-head>
+  
+  <!-- BODY -->
+  <mj-body background-color="#efefef">
+
+    <!-- Spacer -->
+    <mj-include path="./views/includes/spacer.mjml" />
+
+    <!-- Blue Header -->
+    <mj-include path="./views/includes/header.mjml" />
+
+    <!-- Headline -->
+    <mj-section padding="30px 30px 0" background-color="white">
+      <mj-column>
+        <mj-text mj-class="h2">Job-Empfehlungen</mj-text>
+        <mj-text font-size="13px" padding="13px 0">
+          Schau mal, wir haben folgende Jobs gefunden, die zu dir passen:
+        </mj-text>
+        <mj-divider border-color="#eee" border-width="2px" />
+      </mj-column>
+    </mj-section>
+    
+    <!-- Jobs list -->
+    <mj-wrapper padding="0 30px 30px" background-color="white" border-radius="0 0 3px 3px">
+      
+      <mj-raw>
+      {% for job in jobs %}
+        {% if job.companyLogoFile is not empty %}
+          {% set logoSrc = asset('toplogos/' ~ job.companyLogoFile, 'legacy') %}
+          {% set logoAltText = job.companyName %}
+        {% else %}
+          {% set logoSrc = asset('img/mail/no-logo.jpg', 'frontend') %}
+          {% set logoAltText = "" %}
+        {% endif %}
+        {% if job.getCompanyVisible == false %}
+          {% set logoSrc = asset('img/mail/no-logo.jpg', 'frontend') %}
+          {% set logoAltText = "" %}
+          {% set placeOfWork = job.place %}
+        {% else %}
+          {% set placeOfWork = job.companyName ~ ', ' ~ job.place %}
+        {% endif %}
+      </mj-raw>
+      <mj-section>
+        <mj-column width="20%">
+          <mj-image align="left" width="85px" height="85px" src="{{ logoSrc }}" alt="{{ logoAltText }}" target="_blank" href="{{ url('jobcloud_job_sitemap_detail_' ~ user.language, { id: job.id }) | addTrackingParameters(template_name, 'jobs_logo', user.id, messageId) }}" />
+        </mj-column>
+        <mj-column width="80%" padding="13px 0">
+          <mj-text font-size="18px" font-weight="bold">
+            <a class="link" href="{{ url('jobcloud_job_sitemap_detail_' ~ user.language, { id: job.id }) | addTrackingParameters(template_name, 'jobs_logo', user.id, messageId) }}">{{ job.title }}</a>
+          </mj-text>
+          <mj-text padding="13px 0">
+            {{ placeOfWork }}
+          </mj-text>
+        </mj-column>
+        <mj-column width="100%">
+          <mj-divider border-width="2px" border-color="#EEEEEF" />
+        </mj-column>
+      </mj-section>
+      <mj-raw>
+      {% endfor %}
+      </mj-raw>
+
+    </mj-wrapper>
+    
+    <!-- Spacer -->
+    <mj-include path="./views/includes/spacer.mjml" />
+    
+    <!-- Tools list -->
+    <mj-include path="./views/includes/tools.mjml" />
+    
+    <!-- Spacer -->
+    <mj-include path="./views/includes/spacer.mjml" />
+    
+    <!-- Download -->
+    <mj-include path="./views/includes/download-app.mjml" />
+    
+    <!-- Spacer -->
+    <mj-include path="./views/includes/spacer.mjml" />
+
+    <!-- Additional informations -->
+    <mj-include path="./views/includes/additional-infos.mjml" />
+
+    <!-- Spacer -->
+    <mj-include path="./views/includes/spacer.mjml" />
+  </mj-body>
+</mjml>
