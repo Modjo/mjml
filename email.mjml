@@ -1,0 +1,102 @@
+<mjml lang="de">
+  
+  <!-- HEAD -->
+  <mj-head>
+    <mj-style>
+      .link { color: #0088cc; text-decoration: none }
+      .link:hover { text-decoration: underline !important }
+      .company-logo { max-width: 80% }
+      .box-shadow { box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1); -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1); -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1); }
+    </mj-style>
+    
+    <mj-attributes>
+      <mj-class name="background" background-color="#004099" /> 
+      <mj-class name="gradient" background-color="linear-gradient(135deg, #0088CC 0%, #004099 100%)" />
+      <mj-class name="h2" color="#393941" padding-bottom="16px" font-size="18px" font-weight="700" line-height="19.5px" />
+      <mj-class name="text--tiny"  align="center" font-size="12px" color="#5F6062" />
+      
+      <mj-all padding="0" font-family="'Helvetica Neue', Arial, sans-serif" />
+    </mj-attributes>
+  </mj-head>
+  
+  <!-- BODY -->
+  <mj-body background-color="#efefef">
+
+    <!-- Spacer -->
+    <mj-include path="./includes/spacer.mjml" />
+
+    <!-- Blue Header -->
+    <mj-include path="./includes/header.mjml" />
+
+    <!-- Headline -->
+    <mj-section padding="30px 30px 0" background-color="white">
+      <mj-column>
+        <mj-text mj-class="h2">Job-Empfehlungen</mj-text>
+        <mj-text font-size="13px" padding="13px 0">
+          Schau mal, wir haben folgende Jobs gefunden, die zu dir passen:
+        </mj-text>
+        <mj-divider border-color="#eee" border-width="2px" />
+      </mj-column>
+    </mj-section>
+    
+    <!-- Jobs list -->
+    <mj-wrapper padding="0 30px 30px" background-color="white" border-radius="0 0 3px 3px">
+      
+      <mj-section>
+        <mj-column width="20%">
+          <mj-image align="left" width="85px" height="85px" src="https://jobs.ch/asset/img/mail/no-logo.jpg" alt="" target="_blank" href="https://jobs.ch/en/vacancies/detail/1337/?utm_medium=organic&amp;utm_campaign=ch_recommended-jobs_b2c_jobs.ch&amp;utm_content=job-link-logo&amp;source=dsp_mail&amp;uid=29a683b0-f94e-49dd-8d6b-4612775566f3&amp;mid=bb4b982b-ad61-4c01-bf09-3333e076beac" />
+        </mj-column>
+        <mj-column width="80%" padding="13px 0">
+          <mj-text font-size="18px" font-weight="bold">
+            <a class="link" href="https://jobs.ch/en/vacancies/detail/1337/?utm_source=automail-job-push&utm_medium=organic&utm_campaign=ch_recommended-jobs_b2c_jobs.ch&utm_content=job-link&source=dsp_mail&uid=29a683b0-f94e-49dd-8d6b-4612775566f3&mid=bb4b982b-ad61-4c01-bf09-3333e076beac">Best job in the world - company visible</a>
+          </mj-text>
+          <mj-text padding="13px 0">
+            Jobcloud AG, Zürich
+          </mj-text>
+        </mj-column>
+        <mj-column width="100%">
+          <mj-divider border-width="2px" border-color="#EEEEEF" />
+        </mj-column>
+      </mj-section>
+      
+      <mj-section>
+        <mj-column width="20%">
+          <mj-image align="left" width="85px" height="85px" src="https://jobs.ch/asset/img/mail/no-logo.jpg" alt="" target="_blank" href="https://jobs.ch/en/vacancies/detail/1337/?utm_medium=organic&amp;utm_campaign=ch_recommended-jobs_b2c_jobs.ch&amp;utm_content=job-link-logo&amp;source=dsp_mail&amp;uid=29a683b0-f94e-49dd-8d6b-4612775566f3&amp;mid=bb4b982b-ad61-4c01-bf09-3333e076beac" />
+        </mj-column>
+        <mj-column width="80%" padding="13px 0">
+          <mj-text font-size="18px" font-weight="bold">
+            <a class="link" href="https://jobs.ch/en/vacancies/detail/1337/?utm_source=automail-job-push&utm_medium=organic&utm_campaign=ch_recommended-jobs_b2c_jobs.ch&utm_content=job-link&source=dsp_mail&uid=29a683b0-f94e-49dd-8d6b-4612775566f3&mid=bb4b982b-ad61-4c01-bf09-3333e076beac">A very good job - company invisible</a>
+          </mj-text>
+          <mj-text padding="13px 0">
+            Zürich
+          </mj-text>
+        </mj-column>
+        <mj-column width="100%">
+          <mj-divider border-width="2px" border-color="#EEEEEF" />
+        </mj-column>
+      </mj-section>
+
+    </mj-wrapper>
+    
+    <!-- Spacer -->
+    <mj-include path="./includes/spacer.mjml" />
+    
+    <!-- Tools list -->
+    <mj-include path="./includes/tools.mjml" />
+    
+    <!-- Spacer -->
+    <mj-include path="./includes/spacer.mjml" />
+    
+    <!-- Download -->
+    <mj-include path="./includes/download-app.mjml" />
+    
+    <!-- Spacer -->
+    <mj-include path="./includes/spacer.mjml" />
+
+    <!-- Additional informations -->
+    <mj-include path="./includes/additional-infos.mjml" />
+
+    <!-- Spacer -->
+    <mj-include path="./includes/spacer.mjml" />
+  </mj-body>
+</mjml>

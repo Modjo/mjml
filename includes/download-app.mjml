@@ -1,0 +1,14 @@
+<mj-section css-class="box-shadow" text-align="left" padding="30px" background-color="#f7f7f7" background-url="https://jobs.ch/asset/img/mail/email-appinfo.png" background-repeat="no-repeat" border-radius="3px">
+  <mj-column width="100%">
+    <mj-text mj-class="h2">Hol dir jetzt die jobs.ch App</mj-text>
+    <mj-text font-size="13px" padding="13px 0">
+      Verpasse keine Jobangebote mehr.
+    </mj-text>
+  </mj-column>
+  <mj-column width="116px" padding-top="20px" padding-right="6px">
+    <mj-image src="https://img.jobs.ch/www/DESIGN-jobs-ch/img/email/playstore-badge-de.png" alt="" href="https://www.jobs.ch/en/mobile/?utm_source=automail-job-push&amp;utm_medium=organic&amp;utm_campaign=ch_recommended-jobs_b2c_jobs.ch&amp;utm_content=app-teaser" />
+  </mj-column>
+  <mj-column width="110px" padding-top="20px">
+    <mj-image src="https://img.jobs.ch/www/DESIGN-jobs-ch/img/email/appstore-badge-de.png" alt="" href="https://www.jobs.ch/en/mobile/?utm_source=automail-job-push&amp;utm_medium=organic&amp;utm_campaign=ch_recommended-jobs_b2c_jobs.ch&amp;utm_content=app-teaser" />
+  </mj-column>
+</mj-section>

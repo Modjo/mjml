@@ -1,0 +1,12 @@
+<mj-section>
+  <mj-column background-color="#004099" padding="30px" border-radius="3px">
+    <mj-text mj-class="h2" color="white">Nutzt du alle Jobs.ch Tools?</mj-text>
+    <mj-text font-size="13px" line-height="24px" color="#CCD9EA">
+      <ul style="margin: 0; padding: 0 16px">
+        <li>Job-Alarm: Informiert bleiben zu neuesten Jobs.</li>
+        <li>1-Klick-Bewerbung: Effizient, auch via Smartphone.</li>
+        <li>Profil: Gefunden werden statt suchen.</li>
+    </ul>
+    </mj-text>
+  </mj-column>
+</mj-section>
