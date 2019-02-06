@@ -51,7 +51,8 @@
           {% set logoSrc = asset('img/mail/no-logo.jpg', 'frontend') %}
           {% set logoAltText = "" %}
         {% endif %}
-        {% if job.getCompanyVisible == false %}
+
+        {% if job.companyVisible == false %}
           {% set logoSrc = asset('img/mail/no-logo.jpg', 'frontend') %}
           {% set logoAltText = "" %}
           {% set placeOfWork = job.place %}

@@ -5,15 +5,15 @@ var mjml2html = require('mjml');
 var Twig = require('twig')
 var twig = Twig.twig;
 
-Twig.extendFunction("url", function (value, times) {
+Twig.extendFunction("url", function (routeName, params) {
     return "https://www.jobs.ch";
 });
 
-Twig.extendFunction("asset", function (value, times) {
+Twig.extendFunction("asset", function (asset, location) {
     return "https://placehold.it/350x50";
 });
 
-Twig.extendFilter("addTrackingParameters", function (value, times) {
+Twig.extendFilter("addTrackingParameters", function (templateName, urlType, userId, messageId) {
     return "";
 });
 
@@ -31,19 +31,19 @@ router.get('/', function (req, res, next) {
 
             var mjmlButRenderedTwig = template.render({
                 jobs: [{
-                        "id": "jujueidi",
-                        "title": "fett",
+                        "id": "f17817a2-2307-4eaf-a59c-f9b6d971e89c",
+                        "title": "Test Job 1",
                         "companyName": "JobCloud AG",
-                        "place": "Zurich",
-                        "companyLogoFile": "",
+                        "place": "8032 Zurich",
+                        "companyLogoFile": null,
                         "companyVisible": false
                     },
                     {
-                        "id": "youyoueyedee",
-                        "title": "gandon",
+                        "id": "8dfe9f6f-c6c4-45a9-b4bd-f18e1a91926a",
+                        "title": "Test Job 2",
                         "companyName": "JobCloud AG",
                         "place": "Zurich",
-                        "companyLogoFile": "",
+                        "companyLogoFile": "https://avatars1.githubusercontent.com/u/3427265?s=280&v=4",
                         "companyVisible": true
                     }
                 ]
