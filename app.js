@@ -6,7 +6,6 @@ var logger = require('morgan');
 var twig = require('twig');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 var jobRecommendationRouter = require('./routes/job-recommendation');
 
 var app = express();
@@ -22,7 +21,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 app.use('/job-reco', jobRecommendationRouter);
 
 // catch 404 and forward to error handler
