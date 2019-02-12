@@ -1,5 +1,0 @@
-<mj-section mj-class="background gradient" padding="20px 30px" border-radius="3px 3px 0 0">
-  <mj-column>
-    <mj-image src="{{ logoImg }}" alt="jobs.ch" width="160px" height="35px" align="left" href="{{ logoLink }}" target="_blank" />
-  </mj-column>
-</mj-section>
