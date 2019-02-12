@@ -1,5 +1,5 @@
 <mj-section mj-class="background gradient" padding="20px 30px" border-radius="3px 3px 0 0">
   <mj-column>
-    <mj-image src="https://jobs.ch/asset/img/mail/jobs-ch.gif" alt="jobs.ch" width="160px" height="35px" align="left" href="https://jobs.ch/en/?utm_medium=organic&amp;utm_campaign=ch_recommended-jobs_b2c_jobs.ch&amp;utm_content=job-link-logo&amp;source=dsp_mail&amp;uid=29a683b0-f94e-49dd-8d6b-4612775566f3&amp;mid=bb4b982b-ad61-4c01-bf09-3333e076beac" target="_blank" />
+    <mj-image src="{{ logoImg }}" alt="jobs.ch" width="160px" height="35px" align="left" href="{{ logoLink }}" target="_blank" />
   </mj-column>
 </mj-section>

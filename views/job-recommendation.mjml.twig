@@ -2,6 +2,7 @@
   
   <!-- HEAD -->
   <mj-head>
+    <!-- THIS PART SHOULD BE A PLATFORM-SPECIFIC INCLUDE SO WE DONT HAVE TO DUPLICATE THIS TEMPLATE 9x -->
     <mj-style>
       .link { color: #0088cc; text-decoration: none }
       .link:hover { text-decoration: underline !important }
@@ -23,17 +24,18 @@
   <mj-body background-color="#efefef">
 
     <!-- Spacer -->
-    <mj-include path="./views/includes/spacer.mjml" />
+    {% include "./views/includes/spacer.mjml" %}
 
     <!-- Blue Header -->
-    <mj-include path="./views/includes/header.mjml" />
+
+    {% include './views/includes/header.mjml' %}
 
     <!-- Headline -->
     <mj-section padding="30px 30px 0" background-color="white">
       <mj-column>
-        <mj-text mj-class="h2">Job-Empfehlungen</mj-text>
+        <mj-text mj-class="h2">{{ headline }}</mj-text>
         <mj-text font-size="13px" padding="13px 0">
-          Schau mal, wir haben folgende Jobs gefunden, die zu dir passen:
+          {{ lead }}
         </mj-text>
         <mj-divider border-color="#eee" border-width="2px" />
       </mj-column>
@@ -45,16 +47,16 @@
       <mj-raw>
       {% for job in jobs %}
         {% if job.companyLogoFile is not empty %}
-          {% set logoSrc = asset('toplogos/' ~ job.companyLogoFile, 'legacy') %}
-          {% set logoAltText = job.companyName %}
+          {% set jobLogoSrc = asset('toplogos/' ~ job.companyLogoFile, 'legacy') %}
+          {% set jobLogoAltText = job.companyName %}
         {% else %}
-          {% set logoSrc = asset('img/mail/no-logo.jpg', 'frontend') %}
-          {% set logoAltText = "" %}
+          {% set jobLogoSrc = asset('img/mail/no-logo.jpg', 'frontend') %}
+          {% set jobLogoAltText = "" %}
         {% endif %}
 
         {% if job.companyVisible == false %}
-          {% set logoSrc = asset('img/mail/no-logo.jpg', 'frontend') %}
-          {% set logoAltText = "" %}
+          {% set jobLogoSrc = asset('img/mail/no-logo.jpg', 'frontend') %}
+          {% set jobLogoAltText = "" %}
           {% set placeOfWork = job.place %}
         {% else %}
           {% set placeOfWork = job.companyName ~ ', ' ~ job.place %}
@@ -62,7 +64,7 @@
       </mj-raw>
       <mj-section>
         <mj-column width="20%">
-          <mj-image align="left" width="85px" height="85px" src="{{ logoSrc }}" alt="{{ logoAltText }}" target="_blank" href="{{ url('jobcloud_job_sitemap_detail_' ~ user.language, { id: job.id }) | addTrackingParameters(template_name, 'jobs_logo', user.id, messageId) }}" />
+          <mj-image align="left" width="85px" height="85px" src="{{ jobLogoSrc }}" alt="{{ jobLogoAltText }}" target="_blank" href="{{ url('jobcloud_job_sitemap_detail_' ~ user.language, { id: job.id }) | addTrackingParameters(template_name, 'jobs_logo', user.id, messageId) }}" />
         </mj-column>
         <mj-column width="80%" padding="13px 0">
           <mj-text font-size="18px" font-weight="bold">
@@ -83,24 +85,24 @@
     </mj-wrapper>
     
     <!-- Spacer -->
-    <mj-include path="./views/includes/spacer.mjml" />
+    {% include "./views/includes/spacer.mjml" %}
     
     <!-- Tools list -->
-    <mj-include path="./views/includes/tools.mjml" />
+    {% include "./views/includes/tools.mjml" %}
     
     <!-- Spacer -->
-    <mj-include path="./views/includes/spacer.mjml" />
+    {% include "./views/includes/spacer.mjml" %}
     
     <!-- Download -->
-    <mj-include path="./views/includes/download-app.mjml" />
+    {% include "./views/includes/download-app.mjml" %}
     
     <!-- Spacer -->
-    <mj-include path="./views/includes/spacer.mjml" />
+    {% include "./views/includes/spacer.mjml" %}
 
     <!-- Additional informations -->
-    <mj-include path="./views/includes/additional-infos.mjml" />
+    {% include "./views/includes/footer.mjml" %}
 
     <!-- Spacer -->
-    <mj-include path="./views/includes/spacer.mjml" />
+    {% include "./views/includes/spacer.mjml" %}
   </mj-body>
 </mjml>
